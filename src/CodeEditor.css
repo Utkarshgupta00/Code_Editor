@@ -1,0 +1,153 @@
+/* src/CodeEditor.css */
+
+.hero{
+    background-color: black;
+    color : white;
+    font-size: 50px;
+    padding : 30px;
+    font-weight: 900;
+}
+.hero span{
+    color : orange;
+
+}
+/* Container for the code editor */
+.code-editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    height: 90vh; /* Set a height to center content vertically within the viewport */
+    background-color: black;
+    padding: 16px;
+  }
+
+/* Toolbar styles */
+.editor-toolbar {
+    display: flex;
+    flex-direction: row; /* Align buttons in a row on larger screens */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line on smaller screens */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 16px; /* Add some spacing between text area and buttons */
+}
+
+.button {
+    background-color: transparent;
+
+    color: white;
+    font-size : 20px;
+    font-weight: bolder;
+    border: none;
+    padding: 15px 30px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+    font-weight : 900;
+    font-family : Verdana, Geneva, Tahoma, sans-serif;
+
+    /* Add a subtle hover effect and shadow */
+    box-shadow: 0 2px 4px orange;
+    transform: scale(1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+margin-top : 12px;
+    /* Add animation on hover */
+    &:hover {
+        background-color: orange;
+        transform: scale(1.05);
+    }
+}
+
+/* Code area styles */
+.code {
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px; /* Adjust minimum width for smaller screens */
+    min-height: 300px; /* Minimum height */
+    border: 2 solid orange;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: black;
+    color : orange;
+   
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    /* Add shadow on focus */
+    &:focus {
+        box-shadow: 0 4px 12px rgb(255, 89, 0);
+    }
+}
+
+/* Input field styles */
+
+
+
+.copy-message {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    background-color: orange;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s;
+}
+
+/* Additional styles for save message */
+.save-message {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    background-color: orange;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    z-index: 99999;
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s;
+}
+
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .code-editor {
+       padding : 0px 20px;
+    }
+
+
+
+    .button {
+        width: 100%; /* Make buttons take the full width on smaller screens */
+    }
+
+    .code {
+        
+        min-width: 100%;
+        margin-bottom: 25px;
+       /* Make sure the text area takes the full width on smaller screens */
+    }
+}
