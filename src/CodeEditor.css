@@ -1,5 +1,7 @@
 /* src/CodeEditor.css */
-
+*{
+  background : black;
+}
 .hero{
     background-color: black;
     color : white;
@@ -17,28 +19,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; /* Center content vertically */
-    height: 90vh; /* Set a height to center content vertically within the viewport */
     background-color: black;
     padding: 16px;
   }
 
 /* Toolbar styles */
 .editor-toolbar {
-    display: flex;
-    flex-direction: row; /* Align buttons in a row on larger screens */
-    flex-wrap: wrap; /* Allow buttons to wrap to the next line on smaller screens */
-    justify-content: center; /* Center buttons horizontally */
-    margin-top: 16px; /* Add some spacing between text area and buttons */
+    display : flex;
+ /* Add some spacing between text area and buttons */
 }
 
 .button {
     background-color: transparent;
-
+    
     color: white;
     font-size : 20px;
     font-weight: bolder;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 40px;
     margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -50,7 +48,8 @@
     box-shadow: 0 2px 4px orange;
     transform: scale(1);
     transition: background-color 0.3s ease, transform 0.2s ease;
-margin-top : 12px;
+margin-top : 22px;
+
     /* Add animation on hover */
     &:hover {
         background-color: orange;
@@ -60,8 +59,9 @@ margin-top : 12px;
 
 /* Code area styles */
 .code {
+  margin-top : 30px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     min-width: 300px; /* Adjust minimum width for smaller screens */
     min-height: 300px; /* Minimum height */
     border: 2 solid orange;
@@ -73,12 +73,12 @@ margin-top : 12px;
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 
     /* Add shadow on focus */
     &:focus {
-        box-shadow: 0 4px 12px rgb(255, 89, 0);
+        box-shadow: 0 4px 8px rgb(255, 89, 0);
     }
 }
 
@@ -135,13 +135,16 @@ margin-top : 12px;
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
     .code-editor {
+      
        padding : 0px 20px;
     }
 
 
 
     .button {
-        width: 100%; /* Make buttons take the full width on smaller screens */
+        width: 100%;
+        padding : 20px 40px;
+        margin : 20px; /* Make buttons take the full width on smaller screens */
     }
 
     .code {

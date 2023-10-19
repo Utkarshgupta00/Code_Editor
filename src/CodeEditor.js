@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 const CodeEditor = () => {
     const [code, setCode] = useState('');
     const [isLocked, setIsLocked] = useState(false);
-    const [savedCode, setSavedCode] = useState(null);
+  
     const [copyMessage, setCopyMessage] = useState('');
     const [saveMessage, setSaveMessage] = useState(''); // New state for save message
 
@@ -17,7 +17,6 @@ const CodeEditor = () => {
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-
         showCopyMessage();
     };
 
@@ -37,7 +36,7 @@ const CodeEditor = () => {
         }
 
         // Save the code to the savedCode state
-        setSavedCode(code);
+
 
         // Save the code as a .txt file
         const blob = new Blob([code], { type: 'text/plain' });

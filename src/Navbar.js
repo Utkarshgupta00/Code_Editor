@@ -6,7 +6,7 @@ const Navbar = ({ onSave }) => {
   return (
     <div className="navbar">
       <a href="#" className="logo">
-        C0DeDIT
+        coEDITOR
       </a>
       <button className="save-button" onClick={onSave}>
         Save
